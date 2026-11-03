@@ -1,5 +1,7 @@
 # DigiClone Calculator — DMO
 
+<img src="assets/icon-192.png" width="88" align="right" alt="Ícone do DigiClone Calculator" />
+
 **App online:** https://kuradame13.github.io/DMO-Clone-Calc/
 
 Calculadora de clone perfeito para **Digimon Masters Online**, feita como web app mobile-first (HTML/CSS/JS puro, sem dependências). Pode ser instalada no celular como PWA (menu do navegador → “Adicionar à tela inicial”).
@@ -18,7 +20,7 @@ Calculadora de clone perfeito para **Digimon Masters Online**, feita como web ap
 ## Rodar localmente
 
 ```bash
-cd digiclone-calculator
+cd DMO-Clone-Calc
 python3 -m http.server 8000
 ```
 
@@ -31,8 +33,12 @@ index.html            # tela
 styles.css            # visual
 app.js                # tabela + lógica + interação
 manifest.webmanifest  # metadados (instalável como PWA)
-icon.svg              # ícone
+assets/               # ícones PNG (32, 180, 192, 512 e 1024 px)
 ```
+
+## Ícone
+
+O arquivo **`assets/icon-1024.png`** é o indicado para o **App Icon do bot no Discord** (o Discord pede no mínimo 512×512). A mesma arte está em 512, 192, 180 e 32 px para PWA e favicon.
 
 ## Próximo passo: APK
 
