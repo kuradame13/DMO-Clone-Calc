@@ -40,6 +40,10 @@ assets/               # ícones PNG (32, 180, 192, 512 e 1024 px)
 
 O arquivo **`assets/icon-1024.png`** é o indicado para o **App Icon do bot no Discord** (o Discord pede no mínimo 512×512). A mesma arte está em 512, 192, 180 e 32 px para PWA e favicon.
 
+## Bot do Discord
+
+O bot com o comando `/clone`, pronto para hospedar no Cloudflare Workers, está em [`bot/`](bot/README.md).
+
 ## Próximo passo: APK
 
 A base já está pronta para empacotar em WebView. O caminho mais simples é **Capacitor**:

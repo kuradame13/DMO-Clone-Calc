@@ -1,0 +1,36 @@
+[
+  {
+    "name": "clone",
+    "description": "Calcula o clone perfeito de um Digimon (DMO).",
+    "options": [
+      {
+        "type": 3,
+        "name": "status",
+        "description": "Status que será clonado",
+        "required": true,
+        "choices": [
+          { "name": "Ataque", "value": "attack" },
+          { "name": "Crítico", "value": "critical" },
+          { "name": "Bloqueio", "value": "block" },
+          { "name": "Evasão", "value": "evasion" },
+          { "name": "Vida", "value": "health" }
+        ]
+      },
+      {
+        "type": 4,
+        "name": "nivel",
+        "description": "Nível do clone (1 a 15)",
+        "required": true,
+        "min_value": 1,
+        "max_value": 15
+      },
+      {
+        "type": 10,
+        "name": "base",
+        "description": "Valor base do status (opcional para Bloqueio)",
+        "required": false,
+        "min_value": 0.01
+      }
+    ]
+  }
+]
