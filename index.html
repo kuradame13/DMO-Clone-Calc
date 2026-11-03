@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Calculadora de DigiClone perfeito para Digimon Masters Online (DMO)." />
+  <title>DigiClone Calculator — DMO</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand-mark" aria-hidden="true">D%</div>
+      <div class="brand-text">
+        <h1>DigiClone <span>Calculator</span></h1>
+        <p>Clone perfeito · Digimon Masters Online</p>
+      </div>
+    </header>
+
+    <main class="card">
+      <form id="calc-form" novalidate>
+        <div class="field">
+          <span class="field-label" id="stat-label">1. Status</span>
+          <div class="chips" role="radiogroup" aria-labelledby="stat-label" id="stat-chips">
+            <button type="button" class="chip is-active" role="radio" aria-checked="true" data-stat="attack">
+              <span class="dot"></span>Ataque
+            </button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-stat="critical">
+              <span class="dot"></span>Crítico
+            </button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-stat="block">
+              <span class="dot"></span>Bloqueio
+            </button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-stat="evasion">
+              <span class="dot"></span>Evasão
+            </button>
+            <button type="button" class="chip" role="radio" aria-checked="false" data-stat="health">
+              <span class="dot"></span>Vida
+            </button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="base-value">2. Valor base do status</label>
+          <input
+            id="base-value"
+            name="base"
+            class="input"
+            type="text"
+            inputmode="decimal"
+            autocomplete="off"
+            placeholder="Ex.: 1.000"
+            aria-describedby="base-help"
+          />
+          <p class="help" id="base-help">Use o valor branco do status, sem o bônus verde do clone.</p>
+        </div>
+
+        <div class="field">
+          <label class="field-label" for="clone-level">3. Nível do clone</label>
+          <div class="select-wrap">
+            <select id="clone-level" name="level" class="select"></select>
+          </div>
+          <p class="help" id="level-help">Bônus perfeito: 3% do base.</p>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Calcular</button>
+          <button type="button" class="btn btn-ghost" id="clear-btn">Limpar</button>
+        </div>
+
+        <p class="error" id="error" role="alert" aria-live="assertive"></p>
+      </form>
+
+      <section class="result" id="result" hidden aria-live="polite">
+        <div class="result-head">
+          <span class="pill" id="res-status">Ataque</span>
+          <span class="pill pill-muted" id="res-level">Nível 1</span>
+        </div>
+
+        <div class="result-main">
+          <span class="result-label">Bônus de clone</span>
+          <strong class="result-value" id="res-bonus">+0</strong>
+          <span class="result-formula" id="res-formula">0 × 3%</span>
+        </div>
+
+        <div class="result-total">
+          <span>Total com clone</span>
+          <strong id="res-total">0</strong>
+        </div>
+
+        <p class="result-note" id="res-note" hidden></p>
+      </section>
+    </main>
+
+    <details class="table-card">
+      <summary>
+        <span>Ver tabela de clone perfeito</span>
+        <span class="chev" aria-hidden="true">›</span>
+      </summary>
+      <div class="table-wrap">
+        <table id="clone-table">
+          <thead>
+            <tr>
+              <th>Nv</th>
+              <th>ATQ</th>
+              <th>CRT</th>
+              <th>BLQ</th>
+              <th>EVA</th>
+              <th>VID</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="table-note">Valores em % sobre o status base — exceto Bloqueio, que é fixo. Vida só após a Transcendência.</p>
+    </details>
+
+    <footer class="foot">
+      <p>Fonte dos valores: DMO Wiki · Tabela de clone perfeito (1–15).</p>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

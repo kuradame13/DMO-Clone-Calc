@@ -1,1 +1,48 @@
-# DMO-Clone-Calc
+# DigiClone Calculator — DMO
+
+Calculadora de clone perfeito para **Digimon Masters Online**, feita como web app mobile-first (HTML/CSS/JS puro, sem dependências).
+
+## O que ela faz
+
+- Seleciona o status: **Ataque, Crítico, Bloqueio, Evasão ou Vida**.
+- Campo para o **valor base** do status (o número branco, sem o bônus verde).
+- Seleção do **nível do clone** (1 a 15).
+- **Calcular** mostra o bônus de clone e o total com clone.
+- **Limpar** reseta tudo.
+- Tabela de referência completa embutida (destaca a linha/coluna calculada).
+- Bloqueio é tratado como valor fixo (não escala com o base), igual à wiki.
+- Vida avisa que só fica disponível após a Transcendência.
+
+## Rodar localmente
+
+```bash
+cd digiclone-calculator
+python3 -m http.server 8000
+```
+
+Abra `http://localhost:8000`.
+
+## Estrutura
+
+```
+index.html            # tela
+styles.css            # visual
+app.js                # tabela + lógica + interação
+manifest.webmanifest  # metadados (instalável como PWA)
+icon.svg              # ícone
+```
+
+## Próximo passo: APK
+
+A base já está pronta para empacotar em WebView. O caminho mais simples é **Capacitor**:
+
+```bash
+npm init -y
+npm i @capacitor/core @capacitor/cli @capacitor/android
+npx cap init "DigiClone Calculator" com.seunome.digiclone --web-dir=.
+npx cap add android
+npx cap sync
+npx cap open android
+```
+
+Depois é só gerar o APK assinado no Android Studio (`Build > Generate Signed Bundle / APK`). Como o app não usa internet nem permissões especiais, funciona 100% offline.
