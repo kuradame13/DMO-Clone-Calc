@@ -105,14 +105,14 @@ body {
 }
 
 .chips {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   gap: 8px;
 }
 
 .chip {
   --c: #ffb020;
-  flex: 1 1 auto;
+  grid-column: span 2;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -141,6 +141,9 @@ body {
   box-shadow: 0 0 8px var(--c);
   opacity: 0.75;
 }
+
+.chip:nth-child(4),
+.chip:nth-child(5) { grid-column: span 3; }
 
 .chip[data-stat="attack"]   { --c: #ff8a4c; }
 .chip[data-stat="critical"] { --c: #ff5d7a; }

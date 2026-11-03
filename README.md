@@ -1,6 +1,8 @@
 # DigiClone Calculator — DMO
 
-Calculadora de clone perfeito para **Digimon Masters Online**, feita como web app mobile-first (HTML/CSS/JS puro, sem dependências).
+**App online:** https://kuradame13.github.io/DMO-Clone-Calc/
+
+Calculadora de clone perfeito para **Digimon Masters Online**, feita como web app mobile-first (HTML/CSS/JS puro, sem dependências). Pode ser instalada no celular como PWA (menu do navegador → “Adicionar à tela inicial”).
 
 ## O que ela faz
 

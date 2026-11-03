@@ -250,6 +250,8 @@
     const raw = els.base.value.trim();
     const isBlock = Boolean(STATS[selectedStat].flat);
 
+    updateLevelHelp();
+
     if (!raw && !isBlock) {
       showError('Digite o valor base do status para calcular.');
       return;
